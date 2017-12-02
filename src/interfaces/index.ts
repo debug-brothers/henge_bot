@@ -1,0 +1,1 @@
+export interface IStringArrayMap { [s: string]: string[] }
