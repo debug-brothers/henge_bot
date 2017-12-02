@@ -1,6 +1,6 @@
 import * as restify from 'restify'
 import * as dialogs from './dialogs'
-import { configs } from './constants'
+import { configs, TEMPLATES } from './constants'
 
 import * as builder from 'botbuilder'
 
@@ -29,11 +29,9 @@ bot.use({
   }
 })
 
-
-
 // Dialogs
 bot.dialog('/', (session) => {
-  session.send('我是亨哥！')
+  session.endDialog(TEMPLATES.greeting())
 })
 
 bot.dialog(dialogs.INTRODUCTION_DIALOG, dialogs.introductionDialog).triggerAction({matches: 'introduction'})

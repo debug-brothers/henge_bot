@@ -5,6 +5,8 @@ const stringTemplates: IStringArrayMap = {
   greeting: [
     '喵',
     '李小天！我饿了！',
+    `where's Charlie???????`,
+    `郡主妈妈在录视频`
   ],
   introduction: [
     `哼，我就是亨哥！`,
