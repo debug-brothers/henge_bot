@@ -2,7 +2,7 @@ import * as restify from 'restify'
 import * as dialogs from './dialogs'
 import { configs } from './constants'
 
-import * as botbuilder from 'botbuilder'
+import * as builder from 'botbuilder'
 
 const server = restify.createServer()
 server.listen(configs.PORT, () => {
@@ -12,16 +12,14 @@ server.get('/echo/:name', (req, res, next) => {
   res.send(req.params)
 })
 
-console.log(configs.MICROSOFT_APP_ID)
-console.log(configs.MICROSOFT_APP_PASSWORD)
-const connector = new botbuilder.ChatConnector({
+const connector = new builder.ChatConnector({
   appId: configs.MICROSOFT_APP_ID,
   appPassword: configs.MICROSOFT_APP_PASSWORD
 })
 server.post('/api/messages', connector.listen());
 
-const bot = new botbuilder.UniversalBot(connector)
-const recognizer = new botbuilder.LuisRecognizer(configs.LUIS_MODEL_URL)
+const bot = new builder.UniversalBot(connector)
+const recognizer = new builder.LuisRecognizer(configs.LUIS_MODEL_URL)
 bot.recognizer(recognizer)
 
 // Dialogs
