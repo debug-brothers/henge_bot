@@ -21,6 +21,15 @@ server.post('/api/messages', connector.listen());
 const bot = new builder.UniversalBot(connector)
 const recognizer = new builder.LuisRecognizer(configs.LUIS_MODEL_URL)
 bot.recognizer(recognizer)
+bot.use({
+  receive: (event: any, next) => {
+    if (event.text.includes(configs.BOT_USERNAME)) {
+      next()
+    }
+  }
+})
+
+
 
 // Dialogs
 bot.dialog('/', (session) => {

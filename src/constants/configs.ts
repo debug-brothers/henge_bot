@@ -6,4 +6,5 @@ export const configs = {
   LUIS_MODEL_URL: process.env.LUIS_MODEL_URL,
   URL: process.env.URL || 'localhost',
   PORT: process.env.PORT || process.env.port || 8000,
+  BOT_USERNAME: process.env.BOT_USERNAME || '@henge_bot'
 }
