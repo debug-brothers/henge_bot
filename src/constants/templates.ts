@@ -3,10 +3,12 @@ import { IStringArrayMap } from '../interfaces/'
 
 const stringTemplates: IStringArrayMap = {
   greeting: [
-    'Hi', 'Hello', 'Cheers', 'Aloha'
+    '喵',
+    '李小天！我饿了！',
   ],
-  help: [
-    `It's my pleasure to serve you. To get started, you can say things like: I want to report an incident.`
+  introduction: [
+    `哼，我就是亨哥！`,
+    "本喵，就叫亨哥"
   ]
 }
 

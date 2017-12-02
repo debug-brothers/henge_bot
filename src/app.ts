@@ -12,6 +12,8 @@ server.get('/echo/:name', (req, res, next) => {
   res.send(req.params)
 })
 
+console.log(configs.MICROSOFT_APP_ID)
+console.log(configs.MICROSOFT_APP_PASSWORD)
 const connector = new botbuilder.ChatConnector({
   appId: configs.MICROSOFT_APP_ID,
   appPassword: configs.MICROSOFT_APP_PASSWORD
